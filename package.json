@@ -1,0 +1,24 @@
+{
+  "name": "bsale-exercise",
+  "version": "1.0.0",
+  "description": "Ecommerce ejemplo BSALE",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon -r dotenv/config src/app.js"
+  },
+  "keywords": [],
+  "author": "Diego Castro",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.0",
+    "mongoose": "^5.10.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}

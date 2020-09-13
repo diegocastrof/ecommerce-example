@@ -1,0 +1,67 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  /* rem 10px */
+  box-sizing: border-box;
+}
+button {
+  display: inline-block;
+}
+input {
+  display: inline-block;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+img {
+  display: inline-block;
+}
+
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-items {
+  font-size: .6rem;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  padding: 0 5px;
+  border-radius: 30%;
+  background-color: #ff7400;
+  color: white;
+}
+
+.cart-img {
+  max-width: 3rem;
+  max-height: 3rem;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.cart-item-title {
+  display: inline-block;
+}
+
+.card-item-quantifier, .cart-quantifier {
+  max-width: 3rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+button > i {
+  pointer-events: none;
+}
+
+
+a > i {
+  pointer-events: none;
+}

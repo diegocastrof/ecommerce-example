@@ -1,0 +1,128 @@
+<%- include ("../partials/header") %>
+
+  <div class="container">
+    <header class="jumbotron">
+        <h1>Welcome to BSale Store</h1>
+        <p>This was design by Diego Castro (pretty impresive uh!)</p>
+        <p>
+            <a id="btn-sale" class="btn btn-primary bg-danger btn-lg" href="#">Check our products on sale!</a>
+        </p>
+    </header>
+    
+    <div id="main" class="row mb-5">
+
+      <% products.forEach(product => { %>
+        <div class="col-sm-6 col-md-3 px-1 mb-4">
+            <div id="<%= product._id %>" class="card text-center">
+                <img id="url_image" class="card-img-top img-fluid" src="<%= product.url_image %>" alt="product photo">
+                <div class="card-body d-flex flex-column">
+                    
+                    <h5 class="card-title mb-3"><%= product.name %></h4>
+                    
+                    <% if (product.discount > 0){ %> 
+                      <p id="offer-price" class="text-center lead font-weight-bold price"> <span id="real-price" class="text-muted"><del>$ <%= product.price %></del></span> <span class="text-success">$ <%= product.price*(1-product.discount/100)  %></span>  <span id="discount" class="text-danger"><small>(-<%= product.discount  %>%)</small></span></p>
+                    <%} else { %> 
+                      <p id="real-price" class="text-center text-success lead font-weight-bold price">$ <%= product.price %></p>
+                    <%}%>  
+                    
+                    <a href="#" class="add-cart btn btn-primary mt-2 mb-2">Add to cart <i class="fas fa-cart-arrow-down"></i></a>
+                    <div class="card-quantifier d-none">
+                        <button class="less-count btn btn-warning"><i class="fas fa-minus"></i></button>
+                        <input class="card-item-quantifier" type="number" step="1">
+                        <button class="add-count btn btn-danger"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+    </div>
+
+    <!-- Cart section -->
+    <section id="cart">
+        <div class="container w-75">
+            <h2 class="cart-title text-center mb-3">Cart</h2>
+            
+            <ul id="cart-main" class="list-group">
+                <!-- Header -->
+                <li class="list-group-item bg-dark">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="cart-header text-center ">
+                                <h5>ITEM</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="cart-header text-center">
+                                <h5>PRICE</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="cart-header text-center">
+                                <h5>QUANTITY</h5>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Items -->
+                <li id="cart-body" class="list-group-item">
+                    <div class="container text-center py-4">
+                        <h2 class="empty-cart">
+                            There's no items on your cart.
+                        </h2>
+                        <p class="empty-cart-text">
+                            What are you waiting? Surf awaits!
+                        </p>
+                    </div>
+                </li>
+                <!-- Display total -->
+                <li class="list-group-item bg-dark">
+                    <div class="row justify-content-end">
+                        <div class="col-md-6 col-xl-5">
+                            <div class="">
+                                <h5 class="d-inline-block">TOTAL: </h5>
+                                <p class="total-amount lead d-inline-block"> <strong id="total-price">0</strong></p>
+                                <div id="purcharse" class="purcharse d-inline-block ml-5">
+                                    <button class="btn btn-success">Pay now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+  </div>
+
+
+
+  <footer class="mt-5 p-3 text-center text-white bg-primary">    
+    <div class="copyright mb-3">
+        BSale | Diego Castro &copy;
+    </div>
+    <div class="row">
+        <div class="col-md-6 mt-3 mx-auto w-75">
+            <div class="mb-5 d-flex justify-content-between">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/dieeegop" class="fb-ic">
+                    <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!-- Twitter -->
+                <a href="https://github.com/diegocastrof" class="tw-ic">
+                    <i class="fab fa-github fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!-- Google +-->
+                <a href="mailto:dieegocastrof@gmail.com" class="gplus-ic">
+                    <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+                <!--Linkedin -->
+                <a href="https://www.linkedin.com/in/diegocastrof/" class="li-ic">
+                    <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                </a>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+  <script src="/scripts/app.js"></script>
+  </body>
+</html>
