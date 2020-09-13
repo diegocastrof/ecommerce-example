@@ -3,6 +3,9 @@ const Product = require('../models/product-model')
 
 const router = new express.Router()
 
+router.get('/', (req, res) => {
+  res.redirect('/store')
+})
 // Main store - shows the items
 router.get('/store', async (req, res) => {
   
